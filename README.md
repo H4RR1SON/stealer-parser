@@ -127,7 +127,23 @@ $ stealer_parser myfile.zip --outfile results/foo.json
 
 ## Documentation
 
-The grammars can be found in the [`docs` directory](docs).
+Comprehensive documentation is available in the [`docs` directory](docs):
+
+- **[Documentation Index](docs/README.md)** - Complete documentation overview
+- **[Usage Guide](docs/USAGE.md)** - Detailed usage instructions and examples
+- **[Architecture](docs/ARCHITECTURE.md)** - Technical architecture and design
+- **[File Structures](docs/FILE_STRUCTURES.md)** - Stealer log format reference
+- **[Limitations](docs/LIMITATIONS.md)** - Current limitations and known issues
+- **[Improvements](docs/IMPROVEMENTS.md)** - Recommended enhancements (including Rich CLI integration)
+- **[Roadmap](docs/ROADMAP.md)** - Development roadmap and future plans
+- **[Grammar Specifications](docs/)** - Parser grammars for passwords and system info
+
+### Quick Links
+
+- **Getting Started:** See the [Installation section](docs/USAGE.md#installation) for detailed setup
+- **Examples:** Check out [Use Cases](docs/USAGE.md#use-cases) for practical examples
+- **Troubleshooting:** Visit the [Troubleshooting Guide](docs/USAGE.md#troubleshooting)
+- **CTI Analysis:** Learn about [OSINT applications](docs/FILE_STRUCTURES.md#osint-applications)
 
 ## Contributing
 
