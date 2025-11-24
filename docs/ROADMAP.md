@@ -59,11 +59,12 @@ This document outlines the planned development roadmap for the Stealer Parser pr
 - Improved usability
 
 **Features:**
-- 🔄 Rich library integration
+- 🔄 Rich library integration (requires Rich >=13.0.0)
   - Progress bars and spinners
   - Colored output
   - Formatted tables and trees
   - Visual indicators
+  - Note: Rich 13.x+ recommended for best compatibility
 - 🔄 Interactive mode
   - Command-line exploration
   - Search and filter

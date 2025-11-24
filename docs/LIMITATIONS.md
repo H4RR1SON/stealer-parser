@@ -321,11 +321,16 @@ LexError: Illegal character '�' at line 42
 ### Python Version
 **Status:** ⚠️ 3.10+ Required
 
-**Description:** Uses modern Python features (match statements, type hints).
+**Description:** Uses modern Python features introduced in Python 3.10:
+- Structural pattern matching (`match` statements) - PEP 634
+- Union type syntax with `|` - PEP 604
+- Enhanced type hints
 
 **Impact:** Cannot run on older Python installations.
 
 **Distribution:** Many systems still use Python 3.8 or 3.9.
+
+**Note:** If upgrading dependencies (e.g., for tomllib), may require Python 3.11+ in future versions.
 
 ### Binary Dependencies
 **Status:** ⚠️ External Tools Required

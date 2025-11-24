@@ -436,7 +436,10 @@ class InteractiveMode:
 ```python
 # stealer_parser/config.py
 
-import tomllib  # Python 3.11+
+try:
+    import tomllib  # Python 3.11+
+except ModuleNotFoundError:
+    import tomli as tomllib  # Backport for Python 3.10
 from pathlib import Path
 from dataclasses import dataclass
 from typing import Optional
@@ -768,6 +771,9 @@ def process_system_worker(system_dir: str, files: List, archive_name: str):
 
 ```python
 # Add to search_stealer_credits.py
+
+# Note: Keep this list synchronized with the actual implementation in
+# stealer_parser/search_stealer_credits.py
 
 # Additional ASCII art signatures
 VIDAR_HEADER = """

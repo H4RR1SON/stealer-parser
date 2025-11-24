@@ -443,14 +443,16 @@ Some stealers capture screenshots:
 Discord, Telegram, and other app tokens:
 ```
 [Discord]
-Token: MTIzNDU2Nzg5MDEyMzQ1Njc4OQ.GaBcDe.FgHiJkLmNoPqRsTuVwXyZ
+Token: EXAMPLE_TOKEN_NOT_REAL_MTIzNDU2Nzg5.XXXXXX.YYYYYY-ZZZ
 Email: user@example.com
 Phone: +1234567890
 
 [Telegram]
-Session: dc1:xxxxx:xxxxx:xxxxx
+Session: dc1:XXXXX:XXXXX:XXXXX (example session ID, not real)
 Phone: +1234567890
 ```
+
+**Note:** All tokens shown above are fictitious examples for documentation purposes only.
 
 ## Parsing Challenges
 

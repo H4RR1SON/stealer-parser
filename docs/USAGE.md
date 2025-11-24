@@ -340,35 +340,49 @@ cursor.execute('''
 import json
 import csv
 
-# Load JSON
-with open('results.json') as f:
-    data = json.load(f)
+try:
+    # Load JSON
+    with open('results.json', encoding='utf-8') as f:
+        data = json.load(f)
 
-# Export to CSV
-with open('credentials.csv', 'w', newline='') as csvfile:
-    writer = csv.writer(csvfile)
+    # Export to CSV
+    with open('credentials.csv', 'w', newline='', encoding='utf-8') as csvfile:
+        writer = csv.writer(csvfile)
+        
+        # Header
+        writer.writerow([
+            'Software', 'Host', 'Domain', 'Username', 'Password',
+            'Stealer', 'IP', 'Country', 'Date'
+        ])
+        
+        # Data
+        for system_data in data['systems_data']:
+            system = system_data.get('system', {})
+            for cred in system_data['credentials']:
+                try:
+                    writer.writerow([
+                        cred.get('software', ''),
+                        cred.get('host', ''),
+                        cred.get('domain', ''),
+                        cred.get('username', ''),
+                        cred.get('password', ''),
+                        cred.get('stealer_name', ''),
+                        system.get('ip_address', ''),
+                        system.get('country', ''),
+                        system.get('log_date', '')
+                    ])
+                except Exception as e:
+                    print(f"Warning: Failed to write credential row: {e}")
+                    continue
     
-    # Header
-    writer.writerow([
-        'Software', 'Host', 'Domain', 'Username', 'Password',
-        'Stealer', 'IP', 'Country', 'Date'
-    ])
-    
-    # Data
-    for system_data in data['systems_data']:
-        system = system_data.get('system', {})
-        for cred in system_data['credentials']:
-            writer.writerow([
-                cred.get('software'),
-                cred.get('host'),
-                cred.get('domain'),
-                cred.get('username'),
-                cred.get('password'),
-                cred.get('stealer_name'),
-                system.get('ip_address'),
-                system.get('country'),
-                system.get('log_date')
-            ])
+    print(f"Successfully exported to credentials.csv")
+
+except FileNotFoundError:
+    print("Error: results.json not found")
+except json.JSONDecodeError as e:
+    print(f"Error: Invalid JSON format - {e}")
+except Exception as e:
+    print(f"Error: Failed to export CSV - {e}")
 ```
 
 ## Use Cases
